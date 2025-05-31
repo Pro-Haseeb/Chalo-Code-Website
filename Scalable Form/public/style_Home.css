@@ -11,12 +11,12 @@ body,
 html {
     height: 100%;
     font-family: poppins, sans serif;
-    color: #00839b;
+    /* color: ; */
 }
 
 /* Background */
 body {
-    background-image: url('Images/Background.webp');
+    background-image: url('Background.webp');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -30,12 +30,13 @@ body {
     padding: 1em 2em;
     position: relative;
     z-index: 1000;
-    background-color: #00839b;
+    /* background-color: #00839b; */
 }
 
 .logo {
     font-size: 1.8rem;
     font-weight: bold;
+    color: white;
 }
 
 .nav-links {
@@ -197,7 +198,7 @@ button {
     margin-top: 2rem;
     font-size: 3em;
     font-weight: bold;
-    color: blue;
+    color: white;
 }
 
 .cursor {
