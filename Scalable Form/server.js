@@ -13,7 +13,7 @@ const app = express();
 // Middleware
 app.use(cors());
 app.use(bodyParser.json());
-app.use(express.static(path.join(__dirname, 'public'))); // 👈 serve HTML
+app.use(express.static(path.join(__dirname, 'public'))); // HTML
 
 // Routes
 app.use('/api/form', formRoute);

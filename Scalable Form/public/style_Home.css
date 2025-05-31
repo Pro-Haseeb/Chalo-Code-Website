@@ -30,6 +30,7 @@ body {
     padding: 1em 2em;
     position: relative;
     z-index: 1000;
+    top: 1vw;
     /* background-color: #00839b; */
 }
 
@@ -37,12 +38,15 @@ body {
     font-size: 1.8rem;
     font-weight: bold;
     color: white;
+    margin-left: 1vw;
 }
 
 .nav-links {
     list-style: none;
     display: flex;
     gap: 1.5rem;
+    margin-right: 2vw;
+    margin-top: 1vh;
 }
 
 .nav-links li a {
