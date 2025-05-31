@@ -11,7 +11,7 @@ body,
 html {
     height: 100%;
     font-family: poppins, sans serif;
-    color: white;
+    color: #00839b;
 }
 
 /* Background */
@@ -30,6 +30,7 @@ body {
     padding: 1em 2em;
     position: relative;
     z-index: 1000;
+    background-color: #00839b;
 }
 
 .logo {
@@ -196,7 +197,7 @@ button {
     margin-top: 2rem;
     font-size: 3em;
     font-weight: bold;
-    color: #fff;
+    color: blue;
 }
 
 .cursor {
