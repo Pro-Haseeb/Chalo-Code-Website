@@ -5,8 +5,8 @@ const User = require('../models/User');
 router.post('/', async (req, res) => {
   const { name, email, message, captcha } = req.body;
 
-  if (!name || !email) {
-    return res.status(400).json({ message: 'Name and Email required' });
+  if (!name || !email ) {
+    return res.status(400).json({ message: 'Error Something is missing' });
   }
 
   try {
