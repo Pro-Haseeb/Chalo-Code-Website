@@ -1,11 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chalo Code</title>
+    <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
-    haseeb
+
+    <!-- Navbar -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">ChaloCode</div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#" class="anim">Home</a></li>
+                <li><a href="#" class="anim">Courses</a></li>
+                <li><a href="#" class="anim">About</a></li>
+                <li><a href="#" class="anim">Contact</a></li>
+                <li><a href="#"><span id="btnLogin">Login</span></a></li>
+            </ul>
+            <div class="hamburger" onclick="toggleMenu()">
+                <!-- From Uiverse.io by ArturCodeCraft -->
+                <div class="background">
+                    <button class="menu__icon">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <p class="team-typing">
+            <span id="meet">Meet </span><span id="typedName"></span><span class="cursor">|</span>
+        </p>
+        <p class="quote">"Code, Connect, Meme, Repeat!"</p>
+        <h1 class="animated-text">Let's <i>ChaloCode!</i></h1>
+    </section>
+
+    <script src="script.js"></script>
 </body>
+
 </html>
