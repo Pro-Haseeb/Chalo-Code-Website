@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Register</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      display: flex;
+      height: 100vh;
+      background: linear-gradient(to right, #007BFF, #ffffff);
+    }
+
+    .left-section {
+      flex: 1;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 40px;
+    }
+
+    .left-section h1 {
+      font-size: 48px;
+      margin-bottom: 20px;
+    }
+
+    .left-section p {
+      font-size: 18px;
+      max-width: 400px;
+      text-align: center;
+      margin-bottom: 15px;
+    }
+
+    .info-box {
+      margin-top: 20px;
+      background: rgba(255,255,255,0.1);
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+    }
+
+    .info-box p {
+      margin: 5px 0;
+    }
+
+    .form-section {
+      flex: 1;
+      background: white;
+      border-top-left-radius: 60px;
+      border-bottom-left-radius: 60px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    form {
+      width: 80%;
+      max-width: 400px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    form h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #007BFF;
+    }
+
+    input, textarea {
+      margin-bottom: 15px;
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+
+    .captcha-box {
+      margin-bottom: 15px;
+    }
+
+    .captcha-box label {
+      font-weight: bold;
+      margin-bottom: 5px;
+      display: block;
+    }
+
+    button {
+      background-color: #007BFF;
+      color: white;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div class="left-section">
+    <h1>Welcome!</h1>
+    <p>Join our community and get updates directly from us.</p>
+    <div class="info-box">
+      <p><strong>Name:</strong> Chalo Code</p>
+      <p><strong>Email:</strong> ChaloCode123@gmail.com</p>
+      <p><strong>Phone:</strong> +92-300-1234567</p>
+    </div>
+  </div>
+
+  <div class="form-section">
+    <form id="registrationForm">
+      <h2>Register Here</h2>
+      <input type="text" name="name" placeholder="Name" required />
+      <input type="email" name="email" placeholder="Email" required />
+      <textarea name="message" rows="4" placeholder="Your message..."></textarea>
+      <input type="tel" name="phone" placeholder="Phone Number" required />
+      
+      <div class="captcha-box">
+        <label id="captcha-question"></label>
+        <input type="text" id="captcha-input" placeholder="Answer" required />
+      </div>
+      
+      <button type="submit">Register</button>
+    </form>
+  </div>
+
+  <script>
+    const form = document.getElementById('registrationForm');
+    const captchaQuestion = document.getElementById('captcha-question');
+    const captchaInput = document.getElementById('captcha-input');
+
+    let correctAnswer = 0;
+
+    function generateCaptcha() {
+      const num1 = Math.floor(Math.random() * 10) + 1;
+      const num2 = Math.floor(Math.random() * 10) + 1;
+      correctAnswer = num1 + num2;
+      captchaQuestion.textContent = `What is ${num1} + ${num2}?`;
+    }
+
+    generateCaptcha();
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const userAnswer = parseInt(captchaInput.value.trim());
+      if (userAnswer !== correctAnswer) {
+        alert("Captcha incorrect. Please try again.");
+        generateCaptcha();
+        captchaInput.value = '';
+        return;
+      }
+
+      const formData = {
+        name: form.name.value.trim(),
+        email: form.email.value.trim(),
+        message: form.message.value.trim(),
+        phone: form.phone.value.trim()
+      };
+
+      try {
+        const res = await fetch('/api/form', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(formData)
+        });
+
+        if (!res.ok) throw new Error('Server error');
+
+        const data = await res.json();
+        alert(data.message);
+        form.reset();
+        generateCaptcha();
+      } catch (error) {
+        alert('Failed to submit form. Please try again.');
+      }
+    });
+  </script>
+</body>
+</html>
