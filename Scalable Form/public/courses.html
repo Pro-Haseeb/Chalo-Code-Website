@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+   <title>Chalo Code</title>
+    <link rel="stylesheet" href="style_Home.css" />
+</head>
+<body>
+        <header>
+        <nav class="navbar">
+            <div class="logo">ChaloCode</div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#" class="anim">Home</a></li>
+                <li><a href="/courses" class="anim">Courses</a></li>
+                <li><a href="#" class="anim">About</a></li>
+                <li><a href="#" class="anim">Contact</a></li>
+                <li><a href="#"><span id="btnLogin">Login</span></a></li>
+            </ul>
+            <div class="hamburger" onclick="toggleMenu()">
+                
+                <div class="background">
+                    <button class="menu__icon">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <h1 style="text-align:center;padding: 10px; margin: 20px 0px;">Latest Courses Available</h1>
+    <div style="padding: 0px 20px; display: flex ; flex-wrap: wrap; flex-direction: row; justify-content: center; align-items: center;">
+        <div style="width: 320px; border: 1px solid #ccc; border-radius: 8px; overflow: hidden; font-family: Arial, sans-serif;">
+          <a id="videoLink" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" style="text-decoration: none; color: inherit;">
+            <img id="thumbnail" src="" style="width: 100%; display: block;">
+            <div style="padding: 10px;">
+              <h3 id="videoTitle" style="margin: 0; font-size: 16px;">Loading title...</h3>
+            </div>
+          </a>
+        </div>
+
+    </div>
+
+  <script>
+    const link = document.getElementById("videoLink").href;
+    const videoId = link.split("v=")[1].split("&")[0];
+    const thumbnailUrl = `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
+    document.getElementById("thumbnail").src = thumbnailUrl;
+
+    // Fetch title using YouTube oEmbed
+    fetch(`https://www.youtube.com/oembed?url=${link}&format=json`)
+      .then(response => response.json())
+      .then(data => {
+        document.getElementById("videoTitle").innerText = data.title;
+      })
+      .catch(() => {
+        document.getElementById("videoTitle").innerText = "Video title not found";
+      });
+  </script>
+</body>
+</html>
