@@ -140,19 +140,23 @@ let isRed = true;
 
 const body = document.querySelector('body');
 const leftSection= document.querySelector('.left-section');
+const logo = document.querySelector('.logo');
   let isBlue = true;
 
   function toggleGradientBackground() {
     if (isBlue) {
       body.style.background = 'linear-gradient(to right, #00839b, #7e95e6)';
       leftSection.style.color = 'white';
+      logo.style.color='white';
+      
     } else {
       body.style.background = 'linear-gradient(to right, #ffffff, #7e95e6)';
-      leftSection.style.color = '#007BFF'; 
+      leftSection.style.color = '#007BFF'
+      logo.style.color='#00839b'; 
     }
 
     isBlue = !isBlue;
-    setTimeout(toggleGradientBackground, 6000); // every 3 seconds
+    setTimeout(toggleGradientBackground, 6000); // every 6 seconds
   }
 
   // Add smooth transition
