@@ -1,10 +1,11 @@
 /* body ka styling – font, margin, background, aur text color set karny k liye */
-body {
-  font-family: Arial, sans-serif;
+body,html {
+  
   margin: 0;
   padding: 0;
-  background: #f4f4f4; 
+  /* background: #f4f4f4;  */
   color: #333; 
+  font-family: poppins, sans serif;
 }
 /* Navbar styling */
 /* Navbar styling */
@@ -214,7 +215,7 @@ section {
 .slide {
   display: none;
   padding: 1rem;
-  background: rgb(44, 44, 59);;
+  background: rgb(44, 44, 59);
   border-radius: 8px;
   box-shadow: 0 2px 10px rgba(0,0,0,0.1); 
   height: 17vh;
@@ -239,7 +240,7 @@ section {
 }
 
 .animate-heading{
-  color: white;
+  color: rgb(44, 44, 59);
 }
 
 /* button ka styling – color, shape, padding */
