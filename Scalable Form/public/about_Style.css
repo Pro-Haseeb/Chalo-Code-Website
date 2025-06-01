@@ -207,15 +207,17 @@ section {
   position: relative;
   overflow: hidden;
   min-height: 150px; /* height fix ki gayi hai */
+  color: white;
 }
 
 /* har slide initially hidden rahegi */
 .slide {
   display: none;
   padding: 1rem;
-  background: #fff;
+  background: rgb(44, 44, 59);;
   border-radius: 8px;
   box-shadow: 0 2px 10px rgba(0,0,0,0.1); 
+  height: 17vh;
 }
 
 /* image position karne ke liye – slide ke corner mein dikhane ke liye */
@@ -234,6 +236,10 @@ section {
 .controls {
   text-align: center;
   margin-top: 1rem;
+}
+
+.animate-heading{
+  color: white;
 }
 
 /* button ka styling – color, shape, padding */
