@@ -3,7 +3,7 @@ function toggleMenu() {
     navLinks.classList.toggle('show');
 }
 
-const names = ["Hassan Bin Khalid", "Adil Naeem", "Ayesha Altaf", "Haseeb Mushtaq", "Laiba Khalid", "Hina Yousaf", "Nimra Arif", "Syed Rasib Shah", "Ahmed Farrukh", "Laiba Maqsood"]; // Your team
+const names = ["Hassan Bin Khalid", "Adil Naeem", "Ayesha Altaf", "Haseeb Mushtaq", "Laiba Khalid", "Hina Yousaf", "Nimra Arif", "Syed Rasib Shah", "Muhammad Ahmad", "Laiba Maqsood"]; // Your team
 let currentName = 0;
 let charIndex = 0;
 let isDeleting = false;
