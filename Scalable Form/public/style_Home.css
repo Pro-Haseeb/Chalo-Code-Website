@@ -31,6 +31,7 @@ body {
     position: relative;
     z-index: 1000;
     top: 1vw;
+    right: 10vw;
     /* background-color: #00839b; */
 }
 
@@ -38,7 +39,7 @@ body {
     font-size: 1.8rem;
     font-weight: bold;
     color: white;
-    margin-left: 1vw;
+    margin-left: 12vw;
 }
 
 .nav-links {
